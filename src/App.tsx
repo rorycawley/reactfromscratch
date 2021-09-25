@@ -1,6 +1,7 @@
 import './styles.css';
 import logo from './purchasegrid-logo.png';
 import styled from 'styled-components';
+import { ClickCounter } from './ClickCounter';
 
 const Container = styled.div`
   display: flex;
@@ -27,8 +28,9 @@ export const App = () => {
     <Container>
       <Logo src={logo} alt='purchasegrid' />
       <h1>
-        Progress Grid - {process.env.NODE_ENV} {process.env.name}
+        App Progress Grid - {process.env.NODE_ENV} {process.env.name}
       </h1>
+      <ClickCounter />
     </Container>
   );
 };

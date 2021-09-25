@@ -26,7 +26,9 @@ export const App = () => {
   return (
     <Container>
       <Logo src={logo} alt='purchasegrid' />
-      <h1>App</h1>
+      <h1>
+        Progress Grid - {process.env.NODE_ENV} {process.env.name}
+      </h1>
     </Container>
   );
 };

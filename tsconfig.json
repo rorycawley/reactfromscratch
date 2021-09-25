@@ -13,6 +13,7 @@
     "paths": {
       "@app/*": ["./*"]
     },
+    "types": ["node"],
     "typeRoots": ["./src/types"],
     "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
     "esModuleInterop": true, // Disables namespace imports (import * as fs from "fs") and enables CJS/AMD/UMD style imports (import fs from "fs")

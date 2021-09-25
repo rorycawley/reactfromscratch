@@ -28,7 +28,7 @@ export const App = () => {
     <Container>
       <Logo src={logo} alt='purchasegrid' />
       <h1>
-        App Progress Grid - {process.env.NODE_ENV} {process.env.name}
+        sdf Progress Grid - {process.env.NODE_ENV} {process.env.name}
       </h1>
       <ClickCounter />
     </Container>

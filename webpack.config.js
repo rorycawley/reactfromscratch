@@ -17,6 +17,11 @@ const babelLoaderConfiguration = {
   },
 };
 
+const cssLoaderConfiguration = {
+  test: /\.css$/,
+  use: ['style-loader', 'css-loader'],
+};
+
 // This is needed for webpack to import static images in JavaScript files.
 const imageLoaderConfiguration = {
   test: /\.(gif|jpe?g|png|svg|ttf)$/,
@@ -54,13 +59,18 @@ module.exports = {
   // ...the rest of your config
 
   module: {
-    rules: [babelLoaderConfiguration, imageLoaderConfiguration, gqlRule],
+    rules: [
+      babelLoaderConfiguration,
+      cssLoaderConfiguration,
+      imageLoaderConfiguration,
+      gqlRule,
+    ],
   },
 
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html'),
-      // favicon: path.resolve(__dirname, 'src/favicon.png'),
+      favicon: path.resolve(__dirname, 'src/favicon-32x32.png'),
     }),
   ],
 

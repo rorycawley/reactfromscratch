@@ -31,7 +31,27 @@
     "suppressImplicitAnyIndexErrors": true,
     "noUnusedLocals": true, // Report errors on unused locals
     "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statement
-    "removeComments": true
+    "removeComments": true,
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin",
+        "lint": {
+          "validProperties": [
+            "shadow-color",
+            "shadow-opacity",
+            "shadow-offset",
+            "shadow-radius",
+            "padding-horizontal",
+            "padding-vertical",
+            "margin-vertical",
+            "margin-horizontal",
+            "tint-color",
+            "aspect-ratio",
+            "elevation"
+          ]
+        }
+      }
+    ]
   },
   "include": [
     "src/**/*" // *** The files TypeScript should type check ***

@@ -1,0 +1,40 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext", // Specify module code generation
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true, // Allow JavaScript files to be compiled
+    "jsx": "react-jsx",
+    "noEmit": true, // Do not emit output (meaning do not compile code, only perform type checking)
+    "isolatedModules": true, // Unconditionally emit imports for unresolved files
+    "strict": true, // Enable all strict type checking options
+    "moduleResolution": "node", // Resolve modules using Node.js style
+    "baseUrl": "./src", // With "baseUrl": "./" inside this project TypeScript will look for files starting at the same folder as the tsconfig.json.
+    "paths": {
+      "@app/*": ["./*"]
+    },
+    "typeRoots": ["./src/types"],
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
+    "esModuleInterop": true, // Disables namespace imports (import * as fs from "fs") and enables CJS/AMD/UMD style imports (import fs from "fs")
+    "resolveJsonModule": true, // Include modules imported with .json extension
+    "skipLibCheck": true, // Skip type checking of all declaration files
+    "experimentalDecorators": true,
+    "sourceMap": true, // Generate corresponding .map file
+    "declaration": true, // Generate corresponding .d.ts file
+    "incremental": true, // Enable incremental compilation by reading/writing information from prior compilations to a file on disk
+    "forceConsistentCasingInFileNames": true, // Disallow inconsistently-cased references to the same file.
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUnusedParameters": true, // Report errors on unused parameters
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true, // Report errors on unused locals
+    "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statement
+    "removeComments": true
+  },
+  "include": [
+    "src/**/*" // *** The files TypeScript should type check ***
+  ],
+  "exclude": ["node_modules"]
+}

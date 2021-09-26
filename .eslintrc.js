@@ -30,9 +30,16 @@ module.exports = {
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
   },
+  plugins: ['jest'],
   settings: {
     react: {
       version: 'detect',
     },
+    'import/resolver': {
+      'babel-module': {},
+    },
+  },
+  env: {
+    'jest/globals': true,
   },
 }

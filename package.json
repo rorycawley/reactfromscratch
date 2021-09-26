@@ -11,7 +11,7 @@
     "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,js,json}\"",
     "format:check": "prettier --loglevel warn --check \"**/*.{ts,tsx,js,json}\"",
     "types:check": "tsc --pretty --noEmit",
-    "check:all": "npm run format:check && npm run lint:check && npm run types:check && npm run build"
+    "check:all": "npm run lint:check && npm run format:check && npm run types:check && npm run build"
   },
   "keywords": [],
   "author": "",

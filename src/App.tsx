@@ -24,12 +24,11 @@ export const Logo = styled.img`
 `
 
 export const App = () => {
-  const foo = 'foo'
   return (
     <Container>
       <Logo src={logo} alt="purchasegrid" />
       <h1>
-        sdf Progress Grid - {process.env.NODE_ENV} {process.env.name} {foo}
+        sdf Progress Grid - {process.env.NODE_ENV} {process.env.name}
       </h1>
       <ClickCounter />
     </Container>

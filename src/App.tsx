@@ -1,7 +1,7 @@
-import './styles.css';
-import logo from './purchasegrid-logo.png';
-import styled from 'styled-components';
-import { ClickCounter } from './ClickCounter';
+import './styles.css'
+import logo from './purchasegrid-logo.png'
+import styled from 'styled-components'
+import { ClickCounter } from './ClickCounter'
 
 const Container = styled.div`
   display: flex;
@@ -9,7 +9,7 @@ const Container = styled.div`
   align-items: center;
   color: white;
   background-color: #131a22;
-`;
+`
 
 export const Logo = styled.img`
   width: 6em;
@@ -21,16 +21,16 @@ export const Logo = styled.img`
     border: 1px solid #ffffff;
     border-radius: 0.2em;
   }
-`;
+`
 
 export const App = () => {
   return (
     <Container>
-      <Logo src={logo} alt='purchasegrid' />
+      <Logo src={logo} alt="purchasegrid" />
       <h1>
         sdf Progress Grid - {process.env.NODE_ENV} {process.env.name}
       </h1>
       <ClickCounter />
     </Container>
-  );
-};
+  )
+}

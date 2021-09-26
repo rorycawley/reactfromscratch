@@ -1,4 +1,4 @@
-const webpack = require('webpack');
+const webpack = require('webpack')
 
 module.exports = {
   mode: 'production',
@@ -6,4 +6,4 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({ 'process.env.name': JSON.stringify('Penny') }),
   ],
-};
+}

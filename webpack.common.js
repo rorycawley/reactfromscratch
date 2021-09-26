@@ -1,5 +1,5 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 // This is needed for webpack to compile JavaScript.
 const babelLoaderConfiguration = {
@@ -15,12 +15,12 @@ const babelLoaderConfiguration = {
       cacheDirectory: true,
     },
   },
-};
+}
 
 const cssLoaderConfiguration = {
   test: /\.css$/,
   use: ['style-loader', 'css-loader'],
-};
+}
 
 // This is needed for webpack to import static images in JavaScript files.
 const imageLoaderConfiguration = {
@@ -32,12 +32,12 @@ const imageLoaderConfiguration = {
       esModule: false,
     },
   },
-};
+}
 
 const gqlRule = {
   test: /\.(graphql|gql)$/,
   use: 'raw-loader',
-};
+}
 
 module.exports = {
   // mode: process.env.NODE_ENV || 'development',
@@ -98,4 +98,4 @@ module.exports = {
       '/api': 'http://localhost:5000',
     },
   },
-};
+}

@@ -4,13 +4,13 @@ export const Button = styled.button`
   color: red;
 `
 
-type Customer = {
+type AppointmentProps = {
   customer: {
     firstName: string
   }
 }
 
-export const Appointment = ({ customer }: Customer) => (
+export const Appointment = ({ customer }: AppointmentProps) => (
   <div>
     {customer.firstName} <Button>Press Me</Button>
   </div>

@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 import '@testing-library/jest-dom'
+import 'jest-styled-components'
 
 jest.useFakeTimers()
 

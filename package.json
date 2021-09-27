@@ -13,7 +13,7 @@
     "format": "prettier --loglevel warn --write \"**/*.{ts,tsx,js,json}\"",
     "format:check": "prettier --loglevel warn --check \"**/*.{ts,tsx,js,json}\"",
     "types:check": "tsc --pretty --noEmit",
-    "check:all": "npm run lint:check && npm run format:check && npm run types:check && npm run build"
+    "check:all": "npm run format && npm run lint:check && npm run format:check && npm run types:check && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -62,6 +62,7 @@
     "react-dom": "^17.0.2",
     "react-refresh": "^0.10.0",
     "react-test-renderer": "^17.0.2",
+    "safe-stable-stringify": "^2.0.0",
     "style-loader": "^3.3.0",
     "ts-jest": "^27.0.5",
     "type-fest": "^2.3.4",

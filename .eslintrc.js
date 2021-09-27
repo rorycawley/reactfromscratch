@@ -41,5 +41,8 @@ module.exports = {
   },
   env: {
     'jest/globals': true,
+    es2020: true,
+    node: true,
+    jest: true,
   },
 }

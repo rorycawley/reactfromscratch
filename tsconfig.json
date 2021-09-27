@@ -1,5 +1,15 @@
 {
+  "include": [
+    "test/**/*",
+    "src/**/*" // *** The files TypeScript should type check ***
+  ],
+  "exclude": ["node_modules"],
   "compilerOptions": {
+    "typeRoots": ["node_modules/@types", "./src/types"],
+    "baseUrl": ".", // With "baseUrl": "./" inside this project TypeScript will look for files starting at the same folder as the tsconfig.json.
+    "paths": {
+      "@app/*": ["src/*"]
+    },
     "target": "es5",
     "module": "esnext", // Specify module code generation
     "lib": ["dom", "dom.iterable", "esnext"],
@@ -9,12 +19,6 @@
     "isolatedModules": true, // Unconditionally emit imports for unresolved files
     "strict": true, // Enable all strict type checking options
     "moduleResolution": "node", // Resolve modules using Node.js style
-    "baseUrl": "./src", // With "baseUrl": "./" inside this project TypeScript will look for files starting at the same folder as the tsconfig.json.
-    "paths": {
-      "@app/*": ["./*"]
-    },
-    "types": ["node"],
-    "typeRoots": ["./src/types"],
     "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
     "esModuleInterop": true, // Disables namespace imports (import * as fs from "fs") and enables CJS/AMD/UMD style imports (import fs from "fs")
     "resolveJsonModule": true, // Include modules imported with .json extension
@@ -53,9 +57,5 @@
         }
       }
     ]
-  },
-  "include": [
-    "src/**/*" // *** The files TypeScript should type check ***
-  ],
-  "exclude": ["node_modules"]
+  }
 }

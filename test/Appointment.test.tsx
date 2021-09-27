@@ -4,13 +4,31 @@ import renderer from 'react-test-renderer'
 import { Button, Appointment } from '@app/Appointment'
 
 describe('Appointment', () => {
-  it('renders the customer first name', () => {
-    const customer = { firstName: 'Ashley' }
-    const component = <Appointment customer={customer} />
-    const container = document.createElement('div')
-    document.body.appendChild(container)
+  let container: ReactDOM.Container
+  let customer: {
+    firstName: string
+  }
+
+  beforeEach(() => {
+    container = document.createElement('div')
+  })
+
+  const render = (component: JSX.Element) => {
     ReactDOM.render(component, container)
-    expect(document.body.textContent).toMatch('Ashley')
+  }
+
+  it('renders the customer first name', () => {
+    customer = { firstName: 'Ashley' }
+
+    render(<Appointment customer={customer} />)
+
+    expect(container.textContent).toMatch('Ashley')
+  })
+
+  it('renders another customer first name', () => {
+    customer = { firstName: 'Jordan' }
+    render(<Appointment customer={customer} />)
+    expect(container.textContent).toMatch('Jordan')
   })
 
   it('renders the button', () => {

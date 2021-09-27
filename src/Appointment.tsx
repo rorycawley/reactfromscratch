@@ -11,7 +11,5 @@ type AppointmentProps = {
 }
 
 export const Appointment = ({ customer }: AppointmentProps) => (
-  <div>
-    {customer.firstName} <Button>Press Me</Button>
-  </div>
+  <div>{customer.firstName}</div>
 )

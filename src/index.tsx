@@ -1,4 +1,8 @@
 import ReactDOM from 'react-dom'
-import { App } from './App'
+import { AppointmentsDayView } from '@app/Appointment'
+import { sampleAppointments } from '@app/samepleData'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+  <AppointmentsDayView appointments={sampleAppointments} />,
+  document.getElementById('root')
+)

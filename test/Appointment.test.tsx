@@ -1,14 +1,18 @@
 import ReactDOM from 'react-dom'
-import renderer from 'react-test-renderer'
+// import renderer from 'react-test-renderer'
 import ReactTestUtils from 'react-dom/test-utils'
-import { Button, Appointment, AppointmentsDayView } from '@app/Appointment'
+import {
+  // Button,
+  // AppointmentProps,
+  Customer,
+  Appointment,
+  AppointmentsDayView,
+} from '@app/AppointmentsDayView'
 import React from 'react'
 
 describe('Appointment', () => {
   let container: ReactDOM.Container
-  let customer: {
-    firstName: string
-  }
+  let customer: Customer = {}
 
   beforeEach(() => {
     container = document.createElement('div')
@@ -17,6 +21,13 @@ describe('Appointment', () => {
   const render = (component: React.ReactElement) => {
     ReactDOM.render(component, container)
   }
+  const appointmentTable = () =>
+    container.querySelector('#appointmentView > table')
+
+  it('renders a table', () => {
+    render(<Appointment customer={customer} />)
+    expect(appointmentTable()).not.toBeNull()
+  })
 
   it('renders the customer first name', () => {
     customer = { firstName: 'Ashley' }
@@ -32,11 +43,23 @@ describe('Appointment', () => {
     expect(container.textContent).toMatch('Jordan')
   })
 
-  it('renders the button', () => {
-    const tree = renderer.create(<Button />).toJSON()
-
-    expect(tree).toHaveStyleRule('color', 'red')
+  it('renders the customer last name', () => {
+    customer = { lastName: 'Jones' }
+    render(<Appointment customer={customer} />)
+    expect(appointmentTable()?.textContent).toMatch('Jones')
   })
+
+  it('renders another customer last name', () => {
+    customer = { lastName: 'Smith' }
+    render(<Appointment customer={customer} />)
+    expect(appointmentTable()?.textContent).toMatch('Smith')
+  })
+
+  // it('renders the button', () => {
+  //   const tree = renderer.create(<Button />).toJSON()
+
+  //   expect(tree).toHaveStyleRule('color', 'red')
+  // })
 })
 
 describe('AppointmentsDayView', () => {
@@ -75,8 +98,8 @@ describe('AppointmentsDayView', () => {
   it('renders each appointment in an li', () => {
     render(<AppointmentsDayView appointments={appointments} />)
     expect(container.querySelectorAll('li')).toHaveLength(2)
-    expect(container.querySelectorAll('li')[0].textContent).toEqual('12:00 ')
-    expect(container.querySelectorAll('li')[1].textContent).toEqual('13:00 ')
+    expect(container.querySelectorAll('li')[0].textContent).toEqual('12:00')
+    expect(container.querySelectorAll('li')[1].textContent).toEqual('13:00')
   })
 
   it('initially shows a message saying there are no appointments today', () => {

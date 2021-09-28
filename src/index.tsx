@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import { AppointmentsDayView } from '@app/Appointment'
+import { AppointmentsDayView } from '@app/AppointmentsDayView'
 import { sampleAppointments } from '@app/samepleData'
 
 ReactDOM.render(

@@ -16,6 +16,7 @@ module.exports = function (api) {
         extensions: ['.ts', '.tsx', '.jsx', '.js', '.json', '.gql'],
         alias: {
           '@app': './src',
+          '@test': './test',
         },
       },
     ],

@@ -8,6 +8,7 @@
     "typeRoots": ["node_modules/@types", "./src/types"],
     "baseUrl": ".", // With "baseUrl": "./" inside this project TypeScript will look for files starting at the same folder as the tsconfig.json.
     "paths": {
+      "@test/*": ["test/*"],
       "@app/*": ["src/*"]
     },
     "target": "es5",

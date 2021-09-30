@@ -1,11 +1,12 @@
+import { DOMElement, DOMAttributes } from 'react'
 import ReactDOM from 'react-dom'
 
 export const createContainer = () => {
-  const container: HTMLDivElement = document.createElement('div')
+  const container = document.createElement('div')
   return {
-    render: (component: React.ReactElement): void => {
+    render: (component: DOMElement<DOMAttributes<Element>, Element>) => {
       ReactDOM.render(component, container)
     },
-    container: HTMLDivElement,
+    container,
   }
 }

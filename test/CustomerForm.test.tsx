@@ -1,23 +1,23 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import { CustomerForm } from '@app/CustomerForm'
 import { createContainer } from '@test/domManipulators'
+import { DOMElement, DOMAttributes } from 'react'
 
-import React from 'react'
 describe('CustomerForm', () => {
-  let render: (component: React.ReactElement) => void
+  let render: {
+    (component: DOMElement<DOMAttributes<Element>, Element>): void
+  }
   let container: HTMLDivElement
 
   beforeEach(() => {
     const obj = createContainer()
     render = obj.render
-    container = obj.container as unknown as HTMLDivElement
+    container = obj.container
   })
-  const form = (id: string): HTMLFormElement => {
-    return container.querySelector(`form[id="${id}"]`) as HTMLFormElement
-  }
+
+  const form = (id: string) => container.querySelector(`form[id="${id}"]`)
 
   it('renders a form', () => {
-    render(<CustomerForm />)
+    render((<CustomerForm />) as DOMElement<DOMAttributes<Element>, Element>)
     expect(form('customer')).not.toBeNull()
   })
 })
